@@ -55,6 +55,19 @@ if (!$db) {
 }
 ```
 
+### 6. Iniciar el servidor PHP
+
+Una vez que hayas completado los pasos anteriores, puedes iniciar el servidor de desarrollo de PHP:
+
+```bash
+# Navega al directorio del proyecto
+cd e:\Curso Internet\Proyecto MyFavFilms\MyFavFilm_MVC
+
+# Inicia el servidor PHP apuntando al directorio public
+cd public
+php -S localhost:3000
+```
+
 ## 🏗️ Estructura del proyecto
 
 ```
