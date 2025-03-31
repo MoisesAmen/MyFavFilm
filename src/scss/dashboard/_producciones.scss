@@ -1,0 +1,132 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenido{
+    .contenedor-sm{
+        max-width: 95rem;
+    }
+}
+
+
+.contenedor-nueva-pelicula {
+    display: flex;
+    justify-content: center; 
+
+    .agregar-pelicula {
+        @include m.boton2(v.$cyan, v.$blanco);
+        font-size: 2rem !important;
+        padding: 15px 30px !important;
+    }
+}
+
+/*.container_todosFilmes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 3rem;
+    .no-producciones {
+        list-style: none;
+        text-align: center;        
+    }
+}*/
+
+.container_todosFilmes {
+    display: none;
+
+    @include m.tablet{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;        
+        margin-top: 3rem;
+    }
+    
+    .no-producciones {
+        list-style: none;
+        text-align: center;        
+    }
+
+
+}
+
+
+.container_todosFilmes_movil{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+
+    @include m.tablet{
+        display: none;
+    }
+
+    .no-producciones {
+        list-style: none;
+        text-align: center;        
+    }          
+
+}
+
+.pelicula {       
+    background-color: white; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px; /* Margen externo */
+    text-align: center; /* Centrar el contenido */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    //max-width: 250px; /* Ancho deseado para las imágenes */
+    max-height: 380px; /* Altura automática para mantener la proporción */
+    p {
+        //font-size: 1vw;   
+        margin-top: 1rem;
+        font-size: 1.6rem;
+    }
+}
+
+.pelicula img {
+    //width: 185px; /* Ancho deseado para las imágenes */
+    //height: auto; /* Altura automática para mantener la proporción */
+    width: 185px; /* Ancho deseado para las imágenes */
+    height: 272px; /* Altura automática para mantener la proporción */
+    @include m.tablet{
+        width: 100%; /* Ancho deseado para las imágenes */
+        height: 272px; /* Altura automática para mantener la proporción */
+    }
+    
+    cursor: pointer;
+
+}
+
+.pelicula:hover {
+    transform: scale(1.2); /* Escalar ligeramente al pasar el cursor */
+}
+
+.pelicula .titulo {
+    color: black; /* Color del título */
+    font-weight: bold; /* Negrita */
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between; /* Ajusta el espacio entre los botones */
+    
+    
+    button {
+        @include m.tablet{
+            padding-left: 30px;
+            padding-right: 30px;
+        }  
+        
+        &:not(:last-child) {
+          margin-right: 30px; 
+        }
+    }
+}
+
+.editar{
+    @include m.boton2(v.$indigo, v.$blanco);
+}
+
+.eliminar{    
+    @include m.boton2(v.$rojo, v.$blanco);
+  }

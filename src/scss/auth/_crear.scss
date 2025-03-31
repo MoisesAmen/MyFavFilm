@@ -1,0 +1,32 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.crear {
+    margin-top: 5rem;
+    img{
+        display: block; /* Asegura que la imagen se comporte como un bloque */
+        margin-left: auto; /* Establece el margen izquierdo a "auto" */
+        margin-right: auto; /* Establece el margen derecho a "auto" */
+        width: 70%;
+        filter: invert(25%);
+
+        @include m.tablet {
+            width: 30%; /* Establece el ancho de la imagen al 50% */
+        }       
+    }
+    .uptask {        
+        @include m.textoDegradado(v.$morado);
+        font-size: 6rem;
+    }
+
+    input[type="submit"] {
+        @include m.boton(v.$morado, v.$blanco);
+    }
+
+    .acciones {
+        a {
+            color: v.$morado;
+        }
+    }
+    
+}

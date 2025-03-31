@@ -1,0 +1,251 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+#detallePeliculaModal{
+    .modal-body{
+        text-align: center; 
+    
+        .my-3{
+            font-size: 2rem;
+            padding-top: 15px;
+        }
+        p{
+            font-size: 1.8rem; 
+    
+        }
+        strong {
+            font-size: 1.9rem; 
+            font-weight: bold; 
+        }
+
+        .stars {
+            display: flex; /* Utilizar flexbox */
+            justify-content: center; /* Centrar horizontalmente */
+            align-items: center;
+          
+          .star-rating {
+            display: flex; /* Utilizar flexbox */
+            margin-right: 10px;
+          }
+          
+          .starDiv {
+            margin: 0 5px; /* Añadir un margen entre las estrellas */
+          }
+          
+          .star {
+            color: gold; /* Establecer el color dorado */
+          }
+
+            .etiquetaClasificacion {
+                display: flex;
+                align-items: center;
+                color: gold; /* Color dorado para el contenido del div */
+                margin-right: 0;
+            }
+        
+            .btnClasificacion {
+                background-color: gold; /* Color dorado para el botón */
+                color: black; /* Color negro para el texto del botón */
+                font-weight: bold; /* Texto en negrita */
+                font-size: 2.5rem;
+                padding: 5px 10px; /* Padding al botón */
+                border: none; /* Sin borde */
+                border-radius: 5px;
+                cursor: default; /* Cambia el cursor al pasar sobre el botón */
+            }
+
+        }         
+        ////////////////////////
+        /*
+        .trailer-container {
+            text-align: center;    
+
+            #playTrailerBtn {
+                @include m.boton2(v.$indigo, v.$blanco);            
+            }          
+        }                
+        
+        .trailer-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        
+        .trailer-modal-content {
+            position: relative;
+            background-color: v.$indigo;
+            margin: 10% auto;             
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid lighten( v.$indigo, 75%);
+            width: 80%;
+            max-width: 640px;
+        }
+        
+        .close-trailer {
+            position: absolute;
+            top: 0px;
+            right: 15px;
+            color: #aaa;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close-trailer:hover,
+        .close-trailer:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        #trailerIframe {
+            width: 100%;
+            height: 360px;
+        }*/
+        
+                /* CSS */
+        .countdown-container {
+            margin-top: 2rem;            
+            text-align: center;
+            background-color: v.$indigo;
+            color: #fff;
+            padding: 20px;
+            border: v.$blanco 1px solid;
+            border-radius: 5px;
+            display: inline-block;
+            h2{
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        .time-section {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .time {
+            font-size: 50px;
+        }
+
+        .smalltext {
+            font-size: 16px;
+        }
+
+    }
+
+    #mostrarGeneros{
+        margin-bottom: 1rem;
+
+        p{
+            margin: 0;
+        }
+
+        .btnGenero{
+            font-size: 1.8rem !important;
+            margin: 4px 2.5px;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: default !important;
+            background-color: v.$indigo;
+            color: v.$blanco;
+        }
+
+    }
+
+    
+    
+    .tipo-btn {
+        font-size: 1.8rem !important;
+        margin-left: 10px;
+        padding: 6px 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: default !important;
+        //outline: none;
+    }
+    
+    /* Estilos específicos para cada tipo */
+    .pelicula-btn {
+        background-color: v.$azul;
+        color: v.$blanco;
+    }
+    
+    .corto-btn {
+        background-color: v.$rosa;
+        color: v.$blanco;
+    }
+    
+    .serie-btn {
+        background-color: v.$morado;
+        color: v.$blanco;
+    }
+
+    .anime-btn {
+        background-color: v.$cyan;
+        color: v.$blanco;
+    }
+
+    .recuadro {
+        border: 1px solid lighten(v.$indigo, 30%); /* Estilo del borde */
+        background-color: lighten(v.$indigo, 46%);
+        border-radius: 5px; /* Borde redondeado */
+        padding: 10px; /* Espaciado interno */
+        margin-bottom: 20px; /* Margen inferior */
+    }
+
+    #tablaProtagonistas {
+        border: 2px solid lighten(v.$indigo, 30%); // Borde de la tabla
+        border-collapse: collapse; // Colapsa los bordes de las celdas              
+        width: 100%; // Ancho completo            
+
+        th,
+        td {
+            width: 50%; // Ancho igual para ambas columnas
+            padding: 8px; // Espaciado interno de las celdas
+            text-align: center; // Alineación de texto a la izquierda
+            border-right: 2px solid lighten(v.$indigo, 30%); // Línea de división entre columnas
+            color: v.$negro; // Color del texto
+        }
+        
+        th {
+            background-color: lighten(v.$indigo, 46%); // Color de fondo del encabezado
+        }        
+    }
+
+
+
+    .bi-forward-fill{
+        margin: 0 10px;
+    }
+
+    .modal-footer{
+        display: flex;
+        justify-content: space-between; 
+
+        .btn {
+            flex: 1; /* Hace que cada botón ocupe la mitad del espacio disponible */
+            margin: 0 5px; /* Añade un pequeño margen entre los botones */
+        }
+        
+        #playTrailerBtn {
+            @include m.boton2(v.$indigo, v.$blanco);            
+        } 
+    }
+    
+}
+
+

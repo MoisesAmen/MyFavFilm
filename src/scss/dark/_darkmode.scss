@@ -1,0 +1,239 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+@media (prefers-color-scheme: dark) {
+    $grisOscuro: #2c2c3b;
+    body {
+        background-color: $grisOscuro;
+    }
+
+    .login, .crear, .confirmar, 
+    .mensaje, .olvide, .reestablecer {
+        img{
+            filter: invert(0%);
+        }
+    }
+
+    .tagline,
+    .formulario label,
+    .login .acciones a,
+    .crear .acciones a,
+    .olvide .acciones a {
+        color: v.$blanco;
+    }
+    .descripcion-pagina,
+    .formulario .campo input,
+    .nombre-pagina {
+        color: darken(v.$grisClaro, 15%);
+    }
+
+    .formulario .campo input {
+        background-color: lighten( $grisOscuro, 25% );
+        &::placeholder {
+            color: darken(v.$grisClaro, 30%);
+        }
+    }
+
+    .alerta.error {
+        background-color: v.$blanco;
+    }
+
+
+    .sidebar {
+        @include m.tablet {
+            background-color: darken($grisOscuro, 5%);
+        }
+        .sidebar-nav a {
+            &.activo,
+            &:hover {
+                background-color: v.$naranja;
+            }
+        }
+    }
+
+    .barra-mobile,
+    .barra {
+        background-color: darken($grisOscuro, 7%);
+    }
+    .barra {
+        p {
+            color: v.$naranja;
+            span {
+                color: v.$grisClaro;
+            }
+        }
+        .cerrar-sesion {
+            @include m.boton(v.$naranja, v.$blanco);
+            padding: 1rem;
+            font-size: 1.2rem;
+        }
+    }
+
+    .filtros {
+        background-color: lighten($grisOscuro, 10%);
+
+        .headerFiltros {
+            h2 {
+                color: v.$blanco;
+            }   
+            
+            .desplegar-contraer{
+                img{
+                    filter: invert(100%);
+                }
+
+            }
+        }
+        
+        .filtros-inputs .row{
+            label{
+                color: v.$blanco;
+            }
+            select{
+                background-color: lighten( $grisOscuro, 25% );
+                &::placeholder {
+                    color: darken(v.$grisClaro, 30%);
+                }
+            }
+            
+        }
+    }
+
+    .dashboard {
+        background-color: $grisOscuro;
+
+        .enlace {
+            color: v.$grisClaro;
+            &:hover {
+                color: darken(v.$grisClaro, 20%);
+            }
+        }
+        .formulario input:not([type=submit]) {
+            background-color: lighten( $grisOscuro, 20%);
+            color: v.$blanco;
+            &::placeholder {
+                color: darken(v.$grisClaro, 30%);
+            }
+        }
+    }
+
+    .listado-proyectos .proyecto {
+        background-color: lighten($grisOscuro, 20%);
+        &:hover {
+            background-color: lighten($grisOscuro, 15%);
+        }
+    }
+    .container_todosFilmes, .container_todosFilmes_movil {
+        .pelicula {
+            background-color: lighten($grisOscuro, 10%);
+            border: none;
+            p {
+                color: v.$grisClaro;
+            }      
+        }
+
+        .no-producciones{
+            color: v.$blanco;            
+        }
+    }   
+        
+
+    #pagination{
+        #pageNum{
+            background-color: lighten($grisOscuro, 30%);
+            color: v.$blanco;            
+        }
+        #pageNum:not(:disabled):focus, 
+        #pagination #pageNum:not(:disabled):hover {
+            color:v.$negro;
+        }
+    }            
+
+    .modal-content{
+        background-color: $grisOscuro; 
+
+        .modal-title{
+            color: v.$blanco;
+        }
+
+        .modal-header{
+            .btn-close{
+              background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+            }
+        }
+
+        .form-container{
+            background-color: lighten($grisOscuro, 3%);
+            border: none;
+            .control {
+                label {
+                    color: v.$blanco;
+                }
+                input[type='text'],
+                input[type='date'],
+                input[type='number'],                
+                select,
+                textarea {
+                    background-color: lighten( $grisOscuro, 25% );
+                    color: v.$blanco;
+                    &::placeholder {
+                        color: darken(v.$grisClaro, 30%);
+                    }
+                }
+
+                .columnas{
+                    background-color: lighten( $grisOscuro, 25% );                    
+                }
+
+                legend,
+                span,
+                small {
+                    color: v.$blanco;             
+                }
+                .checkgenero{
+                    height: 45px;                   
+                }
+            }
+
+
+        }
+
+        h3, strong, p {
+            color: v.$blanco;        
+        }
+
+        
+    }
+    
+    #detallePeliculaModal{
+        .recuadro{
+            background-color: lighten($grisOscuro, 10%) !important;
+            border: 2px solid lighten($grisOscuro, 30%); /* Agrega un borde de color gris oscuro */
+            border-radius: 10x; /* Agrega esquinas redondeadas */            
+        }
+
+        #tablaProtagonistas {
+            border: 2px solid lighten($grisOscuro, 30%); // Borde de la tabla                      
+
+            th,
+            td {                
+                border-right: 2px solid lighten($grisOscuro, 30%); // Línea de división entre columnas
+                color: v.$blanco; // Color del texto
+            }
+            
+            th {
+                background-color: lighten($grisOscuro, 10%); // Color de fondo del encabezado
+            } 
+        }
+
+        .modal-body{
+            .trailer-modal-content {
+                background-color: $grisOscuro;
+                border: 1px solid lighten( $grisOscuro, 75%);
+            }
+        }
+
+        
+    }
+
+}

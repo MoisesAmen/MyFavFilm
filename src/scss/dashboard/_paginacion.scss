@@ -1,0 +1,37 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+#pagination {
+  display: none;
+  @include m.tablet {
+
+    margin-top: 20px;
+    margin-bottom: 30px;  
+    padding: 25px 0 0 0;
+    display: flex;
+    justify-content: center; /* Ajusta el espacio entre los botones */
+
+    button {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-right: 5px;  
+    }
+
+    button:disabled {
+        opacity: 0.5; /* Reduce la opacidad del botón desactivado */
+        pointer-events: none; /* Evita que el botón desactivado responda a eventos del ratón */
+    }
+    
+    #pageNum {
+      @include m.boton2(v.$blanco, v.$gris); 
+    }
+
+    #prev-btn, #next-btn {
+      @include m.boton2(v.$azul, v.$blanco); 
+    }
+  }
+    
+}
+
+  

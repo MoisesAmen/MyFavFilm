@@ -1,0 +1,166 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+#submitButton {
+  @include m.boton2(v.$indigo, v.$blanco);
+}
+#closeButton {
+  // Estilo específico para el botón "Cerrar"
+  @include m.boton2(v.$rojo, v.$blanco);
+}
+
+.modal-content{
+  transition-property: all;
+  transition-duration: 400ms;
+  transition-timing-function: ease-in-out;  
+
+  &.cerrar {
+    transform: translateY(-200%);
+    opacity: 0;
+  }
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: v.$blanco;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+
+    
+  
+    .control {
+      margin-bottom: 20px;
+  
+      label {
+        font-weight: bold;
+      }
+  
+      input[type='text'],
+      input[type='date'],
+      input[type='number'],
+      select,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid v.$gris;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      legend {        
+        line-height: 1.8;
+        text-align: center; // Centrar el texto
+      }
+
+      fieldset {
+        padding: 0em 0em 0em;
+      }
+
+      #addProtagonistaButton{
+        @include m.boton2(v.$indigo, v.$blanco);      
+      }
+    }
+  
+    .grupo {
+      display: flex;
+      justify-content: space-between;
+  
+      .control {
+        width: calc(50% - 10px);
+      }
+    }
+  
+    .grupo2 {
+      display: flex;
+      align-items: center;
+  
+      input[type='number'] {
+        flex: 1;
+        margin-right: 10px;
+      }
+  
+      span {
+        font-weight: bold;
+      }
+    } 
+    
+    .columnas label {
+      @include m.tablet {        
+          font-size: 1.5rem; // Cambiar el tamaño del texto del label        
+      }
+      font-size: 1.35rem;
+    }
+  
+    .columnas {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 5px;
+      border: 1px solid v.$gris; // Agregar un borde alrededor de los géneros
+      padding: 5px; // Espacio interior para separar el contenido del borde
+      border-radius: 10px; // Agregar bordes redondeados       
+      
+      
+      @include m.tablet {        
+        display: flex;
+        flex-wrap: wrap; 
+        padding: 15px; 
+      }
+
+      .columna {
+        @include m.tablet {        
+          width: 25%;
+          flex: 1;
+        }                       
+      }
+
+    }
+  
+    .checkgenero{
+      margin-bottom: 5px;
+
+      height: 45px;
+      input[type="checkbox"] {
+          display: none; /* Oculta el checkbox predeterminado */
+      }
+      label {
+          display: block;
+          padding: 10px;
+          cursor: pointer;
+          border: 1px solid lighten(v.$negro, 70% );
+          border-radius: 5px;
+          box-sizing: border-box;
+          text-align: center;
+      }
+      /* Estilo del checkbox cuando está seleccionado */
+      input[type="checkbox"]:checked + label {
+          background-color: v.$indigo; /* Cambia el color de fondo cuando el checkbox está seleccionado */
+          color: #fff; /* Cambia el color del texto cuando el checkbox está seleccionado */
+      }
+  }
+  
+    .protagonista {     
+      display: grid;
+      grid-template-columns: 3fr 3fr 1fr;
+      align-items: center;
+      grid-gap: 5px;
+      margin-bottom: 10px;
+  
+      input[type='text'] {
+        flex: 1;
+        
+      }
+  
+      .removeProtagonista {
+        @include m.boton2(v.$rojo, v.$blanco);
+         
+      }
+    }
+  
+    #tam_completo {
+      width: 100%;
+    }
+  }
+  
+  
